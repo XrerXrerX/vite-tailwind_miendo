@@ -8,10 +8,17 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    // Prevent exposure to network by default (only localhost)
-    host: 'localhost',
+    // Allow access from network for custom domain testing
+    host: true,
     // HTTPS in development (optional, uncomment if needed)
     // https: true,
+    // Allow specific hosts for custom domain testing
+    allowedHosts: [
+      'miendonusantara.com',
+      'www.miendonusantara.com',
+      'localhost',
+      '127.0.0.1',
+    ],
     // Security headers for dev server
     headers: {
       'X-Content-Type-Options': 'nosniff',
@@ -54,6 +61,13 @@ export default defineConfig({
       'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
     },
-    host: 'localhost',
+    host: true, // Allow access from network
+    // Allow specific hosts for custom domain testing
+    allowedHosts: [
+      'miendonusantara.com',
+      'www.miendonusantara.com',
+      'localhost',
+      '127.0.0.1',
+    ],
   },
 });
