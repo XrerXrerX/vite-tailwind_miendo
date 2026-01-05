@@ -1,0 +1,24 @@
+Contact: mailto:security@lintasinovasiglobal.com
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: id, en
+Canonical: https://miendo.com/.well-known/security.txt
+Policy: https://miendo.com/security-policy
+Acknowledgments: https://miendo.com/security-acknowledgments
+
+# Security Policy
+
+If you discover a security vulnerability in Miendo,
+please report it to security@lintasinovasiglobal.com
+
+We appreciate responsible disclosure and will respond
+to security reports within 48 hours.
+
+# Out of Scope
+
+- Social engineering attacks
+- Physical attacks
+- Denial of service attacks
+- Spam or social media attacks
+
+Thank you for helping keep Miendo secure!
+

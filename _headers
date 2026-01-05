@@ -1,0 +1,47 @@
+# Security Headers for Production Deployment
+# This file is compatible with Netlify, Vercel, and other platforms
+
+/*
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+  
+  # Prevent clickjacking
+  X-Frame-Options: DENY
+  
+  # Enable XSS protection
+  X-XSS-Protection: 1; mode=block
+  
+  # Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Restrict browser features
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  
+  # Force HTTPS (31536000 seconds = 1 year)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+  
+  # Prevent caching of sensitive data
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static assets with long cache
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files - no cache for dynamic content
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# Service Worker (if applicable)
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Security.txt
+/.well-known/security.txt
+  Content-Type: text/plain
+  Cache-Control: max-age=86400
+

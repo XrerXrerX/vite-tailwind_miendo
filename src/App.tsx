@@ -335,7 +335,7 @@ function App() {
               <p className="text-gray-300">
                 Jl. Tongkrongan No. 123
                 <br />
-                Malang, Jawa Timur
+                alam sutera, Tangerang
               </p>
             </div>
 
@@ -384,13 +384,15 @@ function App() {
                 <a
                   href="https://lintasinovasiglobal.com"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
                 >
                   <img
                     src="/logo-ligal.png"
                     alt="PT. Lintas Inovasi Global"
                     className="h-10 w-auto"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <span className="text-gray-300 text-sm font-semibold hover:text-emerald-400 transition-colors">
                     PT. Lintas Inovasi Global
@@ -432,6 +434,10 @@ function App() {
                       src={photo}
                       alt={`Gallery ${index + 1}`}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      crossOrigin="anonymous"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                       <Camera className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
